@@ -50,7 +50,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex min-h-16 max-w-[90rem] items-center justify-between gap-4 px-3 md:min-h-20 md:px-6 lg:px-10">
         <a href="#inicio" className="inline-flex items-center" onClick={close}>
-          <Logo size={22} alt="" />
+          <Logo size={22} priority alt="" />
           <span className="sr-only">{site.name}</span>
         </a>
 

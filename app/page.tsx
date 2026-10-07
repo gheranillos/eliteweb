@@ -7,6 +7,7 @@ import { Lines } from "@/components/sections/lines";
 import { Manifesto } from "@/components/sections/manifesto";
 import { Navbar } from "@/components/sections/navbar";
 import { Process } from "@/components/sections/process";
+import { logoSrc } from "@/components/ui/logo";
 import { site } from "@/content/site";
 import { getSiteUrl } from "@/lib/site-url";
 
@@ -18,8 +19,8 @@ export default function Home() {
     name: site.name,
     description: site.description,
     url,
-    logo: `${url}/logo.png`,
-    image: `${url}/logo.png`,
+    logo: `${url}${logoSrc}`,
+    image: `${url}${logoSrc}`,
     sameAs: [site.instagram.href],
   };
 

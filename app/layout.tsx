@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Anton, Bebas_Neue, Manrope } from "next/font/google";
+import { logoSrc } from "@/components/ui/logo";
 import { MotionProvider } from "@/components/ui/motion-provider";
 import { site } from "@/content/site";
 import { getSiteUrl } from "@/lib/site-url";
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     description: site.description,
     images: [
       {
-        url: "/logo.png",
+        url: logoSrc,
         width: 1254,
         height: 1254,
         alt: "Símbolo Élite Prod",
@@ -55,11 +56,11 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Élite Prod",
     description: site.description,
-    images: ["/logo.png"],
+    images: [logoSrc],
   },
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    apple: [{ url: "/logo.png" }],
+    icon: [{ url: logoSrc, type: "image/png" }],
+    apple: [{ url: logoSrc }],
   },
 };
 

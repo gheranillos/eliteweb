@@ -1,11 +1,19 @@
 export function getSiteUrl() {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+  const candidates = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.VERCEL_URL,
+  ];
 
-  if (raw) {
+  for (const candidate of candidates) {
+    const raw = candidate?.trim().replace(/\/$/, "");
+    if (!raw) continue;
+
     try {
-      return new URL(raw).origin;
+      const withProtocol = raw.startsWith("http") ? raw : `https://${raw}`;
+      return new URL(withProtocol).origin;
     } catch {
-      return "http://localhost:3000";
+      continue;
     }
   }
 

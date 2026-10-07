@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+export const logoSrc = "/ELITELOGO1.png";
+
 type LogoProps = {
   /** Render size in pixels. Omit it to size the mark with the `--mark` variable. */
   size?: number;
@@ -30,7 +32,7 @@ export function Logo({
       style={sized ? { padding: size / 2 } : undefined}
     >
       <Image
-        src="/logo.png"
+        src={logoSrc}
         alt={alt}
         width={1254}
         height={1254}
